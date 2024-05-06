@@ -1,5 +1,6 @@
-static class Tiquetera {
-        private Dictionary<int, Cliente> DicClientes { get; private set; }
+static class Tiquetera 
+{
+        private static Dictionary<int, Cliente> DicClientes = new Dictionary<int, Cliente> ();
         public int UltimoIDEntrada { get; private set; } 
         public Tiquetera(Dictionary<int, Cliente> dicClientes, int ultimoIDEntrada) 
         {
@@ -7,23 +8,23 @@ static class Tiquetera {
            UltimoIDEntrada = ultimoIDEntrada;
         }
         
-        static public int DevolverUltimoID()
+        public static int DevolverUltimoID()
+        {
+            DicClientes.Keys.Count;
+        } 
+        public  static int AgregarCliente(Cliente)
         {
            
         } 
-        static public int AgregarCliente(Cliente)
+        public static Cliente BuscarCliente(int id)
         {
            
         } 
-        static public Cliente BuscarCliente(int id)
+        public static int CambiarEntrada(int id, int tipo, int cantidad)
         {
            
         } 
-        static public int CambiarEntrada(int id, int tipo, int cantidad)
-        {
-           
-        } 
-        static public List<string> EstadisticasTiquetera()
+        public  static List<string> EstadisticasTiquetera()
         {
            
         } 

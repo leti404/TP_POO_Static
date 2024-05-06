@@ -6,6 +6,7 @@ internal class Program
     {
         const int OP1 = 1, OP2 = 2, OP3 = 3, OP4 = 4, OP5 = 5;
         int opcion;
+        int id = 0;
         
         do
         {
@@ -14,12 +15,15 @@ internal class Program
             {
                 case OP1:
                     cliente1 = ObtenerCliente();
-                    Console.WriteLine($"Se ha creado el superheroe {superheroe1.Nombre}");
+                    Console.WriteLine($"Se ha creado el cliente {cliente1.Nombre}");
+                    Dictionary<int, Cliente> DicClientes = new Dictionary<int, Cliente>();
+                    DicClientes.Add(id++, cliente1)
                 break;
-
                 case OP2:
                 break;
                 case OP3:
+                break;
+                case OP4:
                 break;
             }
 
@@ -51,9 +55,9 @@ internal class Program
         string nombre = IngresoCadena("Ingrese el nombre");
         string apellido= IngresoCadena("Ingrese el Apellido");
         int dni = IngresarEnteroConParametros("Ingrese el DNI", 100000000, 0);
-        int TipoEntrada = IngresarEnteroConParametros("Ingrese el tipo de entrada", 4, 0);
-        double fechaInscripcion = date.Today;
-        Cliente cliente1 = new Cliente(nombre, apellido, dni, );
+        int tipoEntrada = IngresarEnteroConParametros("Ingrese el tipo de entrada", 4, 0);
+        Date fechaInscripcion = date.Today;
+        Cliente cliente1 = new Cliente(nombre, apellido, dni, int tipoEntrada, Date fechaInscripcion );
         return cliente1;
     }
 
