@@ -10,15 +10,22 @@ static class Tiquetera
         
         public static int DevolverUltimoID()
         {
-            DicClientes.Keys.Count;
+            return ultimoIDEntrada;
         } 
-        public  static int AgregarCliente(Cliente)
+        public  static int AgregarCliente(Cliente cliente, int id)
         {
-           
+            cliente = ObtenerCliente();
+            Console.WriteLine($"Se ha creado el cliente {cliente.Nombre}");
+            DicClientes.Add(id, cliente)
+            return id;
         } 
         public static Cliente BuscarCliente(int id)
         {
-           
+           bool existe = dicClientes.ContainsKey(id);
+           if(existe)
+           {
+
+           }
         } 
         public static int CambiarEntrada(int id, int tipo, int cantidad)
         {

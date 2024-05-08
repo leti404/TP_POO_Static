@@ -14,10 +14,7 @@ internal class Program
             switch (opcion)
             {
                 case OP1:
-                    cliente1 = ObtenerCliente();
-                    Console.WriteLine($"Se ha creado el cliente {cliente1.Nombre}");
-                    Dictionary<int, Cliente> DicClientes = new Dictionary<int, Cliente>();
-                    DicClientes.Add(id++, cliente1)
+                    Tiquetera.AgregarCliente(cliente, );
                 break;
                 case OP2:
                 break;
