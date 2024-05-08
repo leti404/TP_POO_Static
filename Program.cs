@@ -5,8 +5,8 @@ internal class Program
     static void Main(string[] args)
     {
         const int OP1 = 1, OP2 = 2, OP3 = 3, OP4 = 4, OP5 = 5;
-        int opcion;
-        int id = 0;
+        int opcion, id = 0;
+        double importeAbonado;
         
         do
         {
@@ -14,7 +14,8 @@ internal class Program
             switch (opcion)
             {
                 case OP1:
-                    Tiquetera.AgregarCliente(cliente, );
+                    id = Tiquetera.AgregarCliente(cliente, id);
+                    id++;
                 break;
                 case OP2:
                 break;
