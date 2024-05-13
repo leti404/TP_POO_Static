@@ -7,6 +7,8 @@ internal class Program
         const int OP1 = 1, OP2 = 2, OP3 = 3, OP4 = 4, OP5 = 5;
         int opcion, id = 0;
         double importeAbonado;
+        Cliente = clienteEncontrado;
+        bool cambioLogrado;
         
         do
         {
@@ -17,16 +19,37 @@ internal class Program
                     id = Tiquetera.AgregarCliente(cliente, id);
                     id++;
                 break;
+
                 case OP2:
+                    Tiquetera.EstadisticasTiquetera();
                 break;
+
                 case OP3:
+                    clienteEncontrado = Tiquetera.BuscarCliente(ValidacionID);
                 break;
+
                 case OP4:
+                    cambioLogrado = Tiquetera.CambiarEntrada(ValidacionID(), IngresarEnteroConParametros("ingrese por que tipo de entrada desea cambiar su entrada", OP1, OP4), IngresarEnteroConParametros("Ingrese la cantidad de entradas que desea comprar", 0, int.MaxValue));
                 break;
             }
 
         }while(opcion != OP5);
 
+    }
+    static int ValidacionID()
+    {
+        int id;
+        do
+        {
+        id = IngresarEnteroConParametros("Ingrese el ID que quiere cambiar ", 0, int.MaxValue);
+        bool existe = dicClientes.ContainsKey(id);
+        if(existe = false)
+        {
+            Console.WriteLine("Error, el ID ingresado no es valido");
+        }
+        }while(existe = false);
+        return id;
+        
     }
     static int IngresarEnteroConParametros(string mensaje, int max, int min)
     {
@@ -58,7 +81,4 @@ internal class Program
         Cliente cliente1 = new Cliente(nombre, apellido, dni, tipoEntrada, fechaInscripcion );
         return cliente1;
     }
-   
-
-
 }
