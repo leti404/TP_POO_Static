@@ -55,7 +55,7 @@ internal class Program
         int dni = IngresarEnteroConParametros("Ingrese el DNI", 100000000, 0);
         int tipoEntrada = IngresarEnteroConParametros("Ingrese el tipo de entrada", 4, 0);
         Date fechaInscripcion = date.Today;
-        Cliente cliente1 = new Cliente(nombre, apellido, dni, int tipoEntrada, Date fechaInscripcion );
+        Cliente cliente1 = new Cliente(nombre, apellido, dni, tipoEntrada, fechaInscripcion );
         return cliente1;
     }
    
