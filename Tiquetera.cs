@@ -1,20 +1,11 @@
 static class Tiquetera 
 {
         private static Dictionary<int, Cliente> DicClientes = new Dictionary<int, Cliente> ();
-        private static double E1;
-        private static double E2;
-        private static double E3;
-        private static double E4;
+        private static double E1 = 45000;
+        private static double E2 = 60000;
+        private static double E3 = 30000;
+        private static double E4 = 100000;
         public static int UltimoIDEntrada { get; private set; } 
-        public static Tiquetera(Dictionary<int, Cliente> dicClientes, int ultimoIDEntrada) 
-        {
-           DicClientes = dicClientes;
-           UltimoIDEntrada = ultimoIDEntrada;
-           E1 = 45000;
-           E2 = 60000;
-           E3 = 30000;
-           E4 = 100000;
-        }
         
         public static int DevolverUltimoID()
         {
@@ -41,10 +32,14 @@ static class Tiquetera
         public static bool CambiarEntrada(int id, int tipo, int cantidad)
         {
             Cliente cliente;
-            double ImporteAnterior = (dicClientes[id].Cantidad) * , importeActual = tipo * cantidad;
+            double ImporteAnterior, importeActual, precio;
             bool existe = dicClientes.ContainsKey(id), cambio = false;
             if(existe)
             {
+                precio = CalcularPrecio(E1, E2, E3, E4, tipo);
+                importeActual = precio * cantidad;
+                precio = CalcularPrecio(E1, E2, E3, E4, dicClientes[id].tipo);
+                ImporteAnterior = (dicClientes[id].Cantidad) * precio; 
                 cliente = dicClientes[id];
                 if(importeActual < ImporteAnterior)
                 {
@@ -54,9 +49,37 @@ static class Tiquetera
             }
             return cambio;
         } 
-        public  static List<string> EstadisticasTiquetera()
+        public static Dictionary<string>  DicClientes.Keys EstadisticasTiquetera()
         {
-           
+           int cantCliE1 = 0, cantCliE2 = 0, cantCliE3 = 0, cantCliE4 = 0;
+           foreach (Dictionary<string> in DicClientes)
+           {
+                if()
+
+           }
+           Console.WriteLine("Hay " + DicClientes.Keys.Count + " usuarios");
         } 
-   
+        static double CalcularPrecio (double E1, double E2, double E3, double E4 , int tipo)
+        {
+            double precio;
+            switch (tipo)
+                {
+                    case 1:
+                        precio = E1;
+                    break;
+
+                    case 2:
+                        precio = E2;
+                    break;
+
+                    case 3:
+                        precio = E3;
+                    break;
+
+                    case 4:
+                        precio = E4;
+                    break;
+                }
+            return precio;
+        } 
 }

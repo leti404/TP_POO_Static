@@ -58,6 +58,7 @@ internal class Program
         Cliente cliente1 = new Cliente(nombre, apellido, dni, int tipoEntrada, Date fechaInscripcion );
         return cliente1;
     }
+   
 
 
 }
