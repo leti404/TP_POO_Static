@@ -41,7 +41,7 @@ internal class Program
         int id;
         do
         {
-        id = IngresarEnteroConParametros("Ingrese el ID que quiere cambiar ", 0, int.MaxValue);
+        id = IngresarEnteroConParametros("Ingrese el ID que quiere cambiar ", -1 , int.MaxValue);
         bool existe = dicClientes.ContainsKey(id);
         if(existe = false)
         {
